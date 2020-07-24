@@ -19,19 +19,15 @@
 </div>
 
 <script>
-    let root = document.getElementById('root');
+    // console.log(React.version);
 
-    let el = React.createElement('h1', '', 'React by ME');
+    // let el = React.createElement('h1', null, 'React by Bitfumes');
 
-    ReactDOM.render(el,root);
+    let el = React.createElement('h1', { children: "React by Bitfumes", blablabla: "anything" });
 
-    console.log(el)
+    console.log(el);
 
-    // el.innerText = "React by Sarthak";
-
-
-    // el.className += 'red';
-
+    ReactDOM.render(el,document.getElementById('root'));
 </script>
 </body>
 </html>
