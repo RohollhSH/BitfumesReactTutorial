@@ -10,24 +10,39 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-    <!-- Load our React component. -->
-    <script src="like_button.js"></script>
+    <!--add babel to try jsx-->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
 <div id="root">
 
 </div>
 
-<script>
-    // console.log(React.version);
+<script type="text/babel">
+    // let innerSpan = React.createElement("span", null, "React by Bitfumes");
 
-    // let el = React.createElement('h1', null, 'React by Bitfumes');
+    // let el = React.createElement('h1', { children: innerSpan });
 
-    let el = React.createElement('h1', { children: "React by Bitfumes", blablabla: "anything" });
+    // let el = React.createElement('h1',null , innerSpan);
 
-    console.log(el);
+    // console.log(el);
 
-    ReactDOM.render(el,document.getElementById('root'));
+    //jsx
+
+    // let myel = <div>HELLO JSX</div>;
+
+    let myel = (
+        <div>
+            <h1>
+                <span>
+                    HELLO JSX
+                </span>
+            </h1>
+        </div>
+    );
+
+
+    ReactDOM.render(myel,document.getElementById('root'));
 </script>
 </body>
 </html>
