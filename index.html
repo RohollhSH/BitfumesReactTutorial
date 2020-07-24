@@ -29,17 +29,17 @@
 
     //jsx
 
-    // let myel = <div>HELLO JSX</div>;
+    let myTitle = "Hello JSX";
 
-    let myel = (
+    let myH1 = (
         <div>
             <h1>
-                <span>
-                    HELLO JSX
-                </span>
+                <span>{myTitle}</span>
             </h1>
         </div>
     );
+
+    let myel = <div>{myH1}</div>;
 
 
     ReactDOM.render(myel,document.getElementById('root'));
