@@ -19,22 +19,42 @@
 </div>
 
 <script type="text/babel">
+    // let innerSpan = React.createElement("span", null, "React by Bitfumes");
 
-    //using props normally
-/*    function MyH1(props) {
+    // let el = React.createElement('h1', { children: innerSpan });
 
-        // console.log(props);
+    // let el = React.createElement('h1',null , innerSpan);
 
-        return (
+    // console.log(el);
+
+    //jsx
+
+    let myTitle = "Hello JSX";
+
+    //function
+    /*    let MyH1 = function () {
+            return (
+                <h1>
+                    <span>{myTitle}</span>
+                </h1>
+            );
+        };*/
+
+    //arrow function method
+    /*    let MyH1 = () => (
             <h1>
-                <span>{props.myTitle}</span>
+                <span>{myTitle}</span>
             </h1>
         );
-    }*/
 
-    //using Destructuring assignment for props
-    function MyH1({myTitle}) {
+        let myel = (
+            <div>
+                <MyH1></MyH1>
+            </div>
+        );*/
 
+    //other function method
+    function MyH1() {
         return (
             <h1>
                 <span>{myTitle}</span>
@@ -42,20 +62,19 @@
         );
     }
 
-    let Myel = () => {
+    // console.log(MyH1);
 
-        let myTitle = "Hello JSX";
+    console.log(<MyH1 />);
 
-        //console.log(<MyH1 data={myTitle} />);
+    let myel = (
+        <div>
+            <MyH1></MyH1>
+        </div>
+    );
 
-        return (
-            <div>
-                <MyH1 myTitle={myTitle}/>
-            </div>
-        );
-    };
+    // console.log(<myel />);
 
-    ReactDOM.render(<Myel />, document.getElementById('root'));
+    ReactDOM.render(myel, document.getElementById('root'));
 </script>
 </body>
 </html>
