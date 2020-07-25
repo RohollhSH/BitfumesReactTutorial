@@ -31,18 +31,50 @@
 
     let myTitle = "Hello JSX";
 
-    let myH1 = (
-        <div>
+    //function
+    /*    let MyH1 = function () {
+            return (
+                <h1>
+                    <span>{myTitle}</span>
+                </h1>
+            );
+        };*/
+
+    //arrow function method
+    /*    let MyH1 = () => (
             <h1>
                 <span>{myTitle}</span>
             </h1>
+        );
+
+        let myel = (
+            <div>
+                <MyH1></MyH1>
+            </div>
+        );*/
+
+    //other function method
+    function MyH1() {
+        return (
+            <h1>
+                <span>{myTitle}</span>
+            </h1>
+        );
+    }
+
+    // console.log(MyH1);
+
+    console.log(<MyH1 />);
+
+    let myel = (
+        <div>
+            <MyH1></MyH1>
         </div>
     );
 
-    let myel = <div>{myH1}</div>;
+    // console.log(<myel />);
 
-
-    ReactDOM.render(myel,document.getElementById('root'));
+    ReactDOM.render(myel, document.getElementById('root'));
 </script>
 </body>
 </html>
