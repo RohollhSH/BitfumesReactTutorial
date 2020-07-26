@@ -1,7 +1,20 @@
 import React from "react";
 
-function App(){
-    return <div>Hello React</div>;
+class App extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = { title:"Hello React" };
+    }
+
+    render() {
+        return(
+            <div>{ this.state.title }</div>
+        )
+    }
 }
+
+/*function App(){
+    return <div>Hello React</div>;
+}*/
 
 export default App;
