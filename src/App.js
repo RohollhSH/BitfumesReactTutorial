@@ -1,4 +1,5 @@
 import React from "react";
+import "./assets/css/style.css";
 
 /*class App extends React.Component{
     constructor(props) {
@@ -16,12 +17,7 @@ import React from "react";
 function App({title}) {
     return (
         <div>
-            <div style=
-                     {{
-                         padding:'10rem',
-                         border: "1px solid green",
-                         backgroundColor:'gray'
-                     }}>
+            <div className="box">
                 {title}
             </div>
         </div>
