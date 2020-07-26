@@ -13,8 +13,19 @@ import React from "react";
     }
 }*/
 
-function App({title}){
-    return <div>{title}</div>;
+function App({title}) {
+    return (
+        <div>
+            <div style=
+                     {{
+                         padding:'10rem',
+                         border: "1px solid green",
+                         backgroundColor:'gray'
+                     }}>
+                {title}
+            </div>
+        </div>
+    );
 }
 
 export default App;
