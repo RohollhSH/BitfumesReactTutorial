@@ -1,6 +1,6 @@
 import React from "react";
 
-class App extends React.Component{
+/*class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = { title:"Hello React" };
@@ -11,10 +11,10 @@ class App extends React.Component{
             <div>{ this.state.title }</div>
         )
     }
-}
-
-/*function App(){
-    return <div>Hello React</div>;
 }*/
+
+function App({title}){
+    return <div>{title}</div>;
+}
 
 export default App;
