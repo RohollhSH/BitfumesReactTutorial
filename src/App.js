@@ -1,14 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./assets/css/style.css";
 import Images from "./components/Images";
 
 function App() {
-  //you can use state like bellow but its recommended to make define them in
-  //different states
-  // const [state, setState] = useState({title: "asdf", isShowing: false});
 
-  const [title, setTitle] = React.useState("Hello React");
-  const [isShowing, setIsShowing] = React.useState(false);
+  const [title, setTitle] = useState("Hello React");
+  const [isShowing, setIsShowing] = useState(false);
+
+  //ComponentDidMount Only
+  //Pay Attention that there is an empty array as second Argument
+  useEffect(() => {
+    console.log("App Mounted");
+  }, []);
 
   function handleClick() {
     setIsShowing(!isShowing);
@@ -16,6 +19,7 @@ function App() {
 
   return (
     <section className="flex justify-center">
+      {console.log('re-rendered')}
       <div className="w-1/2">
         <div className="text-center">
           <div className="my-4">{title}</div>
