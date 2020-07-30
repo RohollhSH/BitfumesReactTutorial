@@ -12,10 +12,7 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("App Mounted");
-    //first according to Line:9 state is set as "Hello React 2"
-    //but because component mounts after constructor so at end state will be set
-    //as bottom line :
-    this.setState({title: "Hello LifeCycle"})
+    // this.setState({title: "Hello LifeCycle"})
   }
 
   // states are Immutable

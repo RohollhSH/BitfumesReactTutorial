@@ -14,6 +14,10 @@ export default class Images extends Component {
     })
   }
 
+  componentDidUpdate() {
+    console.log("App Updated");
+  }
+
   componentWillUnmount() {
     console.log("Images Comp Unmounted");
     clearInterval(this.state.interval);
