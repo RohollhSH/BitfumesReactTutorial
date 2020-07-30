@@ -1,8 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 import "./assets/css/style.css";
 import Images from "./components/Images";
 
-class App extends React.Component {
+function App() {
+  //you can use state like bellow but its recommended to make define them in
+  //different states
+  // const [state, setState] = useState({title: "asdf", isShowing: false});
+
+  const [title, setTitle] = React.useState("Hello React");
+  const [isShowing, setIsShowing] = React.useState(false);
+
+  function handleClick() {
+    setIsShowing(!isShowing);
+  }
+
+  return (
+    <section className="flex justify-center">
+      <div className="w-1/2">
+        <div className="text-center">
+          <div className="my-4">{title}</div>
+          <button
+            className="p-1 bg-blue-700 text-white my-2"
+            onClick={handleClick}
+          >
+            Toggle Image
+          </button>
+        </div>
+
+        {
+          isShowing ? <Images /> : null
+        }
+
+      </div>
+    </section>
+  )
+}
+
+/*class App extends React.Component {
   constructor(props) {
     console.log('App Constructor');
 
@@ -44,6 +78,6 @@ class App extends React.Component {
       </section>
     )
   }
-}
+}*/
 
 export default App;
