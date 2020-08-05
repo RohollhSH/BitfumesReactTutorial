@@ -5,13 +5,19 @@ import Images from "./components/Images";
 function App() {
 
   const [title, setTitle] = useState("Hello React");
-  const [isShowing, setIsShowing] = useState(false);
+  const [isShowing, setIsShowing] = useState(null);
 
   //ComponentDidMount Only
   //Pay Attention that there is an empty array as second Argument
   useEffect(() => {
     console.log("App Mounted");
   }, []);
+
+  useEffect(() => {
+    if(isShowing !== null) {
+      console.log("App Updated");
+    }
+  }, [isShowing]);
 
   function handleClick() {
     setIsShowing(!isShowing);
