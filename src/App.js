@@ -1,21 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./assets/css/style.css";
 import Images from "./components/Images";
 
 function App() {
-
   const [title, setTitle] = useState("Hello React");
-  const [isShowing, setIsShowing] = useState(null);
+  const [isShowing, setIsShowing] = useState(false);
+  const [didMount, setDidMount] = useState(false);
 
-  //ComponentDidMount Only
+const mountRef = useRef(false)
+
+  //Component Did Mount Only
   //Pay Attention that there is an empty array as second Argument
   useEffect(() => {
+    setDidMount(true);
     console.log("App Mounted");
   }, []);
 
+  //component Will Update
   useEffect(() => {
-    if(isShowing !== null) {
+    if(mountRef.current){
       console.log("App Updated");
+    }else{
+      mountRef.current = true;
     }
   }, [isShowing]);
 
@@ -25,7 +31,7 @@ function App() {
 
   return (
     <section className="flex justify-center">
-      {console.log('re-rendered')}
+      {console.log("re-rendered")}
       <div className="w-1/2">
         <div className="text-center">
           <div className="my-4">{title}</div>
@@ -37,13 +43,10 @@ function App() {
           </button>
         </div>
 
-        {
-          isShowing ? <Images /> : null
-        }
-
+        {isShowing ? <Images /> : null}
       </div>
     </section>
-  )
+  );
 }
 
 /*class App extends React.Component {
