@@ -8,11 +8,16 @@ export default function Images() {
 
   const [newImageUrl, setnewImageUrl] = useState("");
 
+  function handleRemove() {
+    console.log("Reaching");
+  }
+
   function ShowImage() {
-    return Images.map((image) => {
+    return Images.map((image, index) => {
       return (
-        <div className="w-1/3 my-4 flex justify-center">
-          <img src={image} alt="" width="150" />
+        // <div className="w-1/3 my-4 flex justify-center" key={Math.random()}>
+        <div className="w-1/3 my-4 flex justify-center" key={index}>
+          <img src={image} alt="" width="150" onClick={handleRemove} />
         </div>
       );
     });
