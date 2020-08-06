@@ -32,7 +32,7 @@ const mountRef = useRef(false)
   return (
     <section className="flex justify-center">
       {console.log("re-rendered")}
-      <div className="w-1/2">
+      <div className="w-10/12">
         <div className="text-center">
           <div className="my-4">{title}</div>
           <button
